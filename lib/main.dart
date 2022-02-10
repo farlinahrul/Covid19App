@@ -1,4 +1,6 @@
-import 'package:covid19app/DashboardPage.dart';
+import 'package:covid19app/module/dashboard/DashboardPage.dart';
+import 'package:covid19app/module/province/ProvincePage.dart';
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,16 +14,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DashboardPage(),
+      routes: {
+        '/': (context) => DashboardPage(),
+        ProvincePage.routeName: (context) => ProvincePage(),
+      },
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:covid19app/CovidIndonesiaProv.dart';
+import 'package:covid19app/models/CovidIndonesiaProv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -7,7 +7,7 @@ class ProvinceDetailPage extends StatelessWidget {
   final CovidIndonesiaProv data;
   final int index;
 
-  const ProvinceDetailPage({Key key, this.data, this.index}) : super(key: key);
+  const ProvinceDetailPage({required this.data, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ProvinceDetailPage extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(vertical: 20),
               child: Text(
-                'Data COVID-19\n${data.listData[index].key}',
+                'Data COVID-19\n${data.listData![index].key}',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 28,
@@ -48,10 +48,10 @@ class ProvinceDetailPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Perkembangan COVID-19 di ${data.listData[index].key}',
+                        'Perkembangan COVID-19 di ${data.listData![index].key}',
                         textAlign: TextAlign.center,
-                        style:
-                            TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w800, fontSize: 16),
                       ),
                     ],
                   ),
@@ -85,7 +85,7 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].jumlahKasus)}',
+                                        '${formatter.format(data.listData![index].jumlahKasus)}',
                                         style: TextStyle(
                                             color: Colors.redAccent,
                                             fontSize: 24,
@@ -109,7 +109,7 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].jumlahSembuh)}',
+                                        '${formatter.format(data.listData![index].jumlahSembuh)}',
                                         style: TextStyle(
                                             color: Colors.green,
                                             fontSize: 24,
@@ -140,7 +140,7 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].jumlahDirawat)}',
+                                        '${formatter.format(data.listData![index].jumlahDirawat)}',
                                         style: TextStyle(
                                             color: Colors.lightBlue,
                                             fontSize: 24,
@@ -164,7 +164,7 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].jumlahMeninggal)}',
+                                        '${formatter.format(data.listData![index].jumlahMeninggal)}',
                                         style: TextStyle(
                                             color: Colors.blue,
                                             fontSize: 24,
@@ -204,7 +204,7 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].jenisKelamin[0].docCount)}',
+                                        '${formatter.format(data.listData![index].jenisKelamin![0].docCount)}',
                                         style: TextStyle(
                                             color: Colors.blueAccent,
                                             fontSize: 24,
@@ -228,7 +228,7 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].jenisKelamin[1].docCount)}',
+                                        '${formatter.format(data.listData![index].jenisKelamin![1].docCount)}',
                                         style: TextStyle(
                                             color: Colors.pinkAccent,
                                             fontSize: 24,
@@ -268,14 +268,14 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].kelompokUmur[0].docCount)}',
+                                        '${formatter.format(data.listData![index].kelompokUmur![0].docCount)}',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        '${data.listData[index].kelompokUmur[0].key}',
+                                        '${data.listData![index].kelompokUmur![0].key}',
                                         style: TextStyle(
                                             color: Colors.black26,
                                             // fontSize: 24,
@@ -292,14 +292,14 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].kelompokUmur[1].docCount)}',
+                                        '${formatter.format(data.listData![index].kelompokUmur![1].docCount)}',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        '${data.listData[index].kelompokUmur[1].key}',
+                                        '${data.listData![index].kelompokUmur![1].key}',
                                         style: TextStyle(
                                             color: Colors.black26,
                                             // fontSize: 24,
@@ -311,7 +311,7 @@ class ProvinceDetailPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                        // umur
+                          // umur
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 4, bottom: 8),
@@ -324,14 +324,14 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].kelompokUmur[2].docCount)}',
+                                        '${formatter.format(data.listData![index].kelompokUmur![2].docCount)}',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        '${data.listData[index].kelompokUmur[2].key}',
+                                        '${data.listData![index].kelompokUmur![2].key}',
                                         style: TextStyle(
                                             color: Colors.black26,
                                             // fontSize: 24,
@@ -348,14 +348,14 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].kelompokUmur[3].docCount)}',
+                                        '${formatter.format(data.listData![index].kelompokUmur![3].docCount)}',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        '${data.listData[index].kelompokUmur[3].key}',
+                                        '${data.listData![index].kelompokUmur![3].key}',
                                         style: TextStyle(
                                             color: Colors.black26,
                                             // fontSize: 24,
@@ -379,14 +379,14 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].kelompokUmur[4].docCount)}',
+                                        '${formatter.format(data.listData![index].kelompokUmur![4].docCount)}',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        '${data.listData[index].kelompokUmur[4].key}',
+                                        '${data.listData![index].kelompokUmur![4].key}',
                                         style: TextStyle(
                                             color: Colors.black26,
                                             // fontSize: 24,
@@ -403,14 +403,14 @@ class ProvinceDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '${formatter.format(data.listData[index].kelompokUmur[5].docCount)}',
+                                        '${formatter.format(data.listData![index].kelompokUmur![5].docCount)}',
                                         style: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 24,
                                             fontWeight: FontWeight.w900),
                                       ),
                                       Text(
-                                        '${data.listData[index].kelompokUmur[5].key}',
+                                        '${data.listData![index].kelompokUmur![5].key}',
                                         style: TextStyle(
                                             color: Colors.black26,
                                             // fontSize: 24,
@@ -422,10 +422,10 @@ class ProvinceDetailPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                        // umur
+                          // umur
                         ),
                         Text(
-                          '${data.lastDate.day} / ${data.lastDate.month} / ${data.lastDate.year}',
+                          '${data.lastDate!.day} / ${data.lastDate!.month} / ${data.lastDate!.year}',
                           style: TextStyle(
                               fontSize: 14,
                               color: Colors.black26,

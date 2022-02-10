@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class DashboardDataTile extends StatelessWidget {
   final value, title, color;
 
-  const DashboardDataTile({Key key, this.value, this.title, this.color}) : super(key: key);
+  const DashboardDataTile({Key? key, this.value, this.title, this.color}) : super(key: key);
+
 
 
   @override

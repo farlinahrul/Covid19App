@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class ProvinceTile extends StatelessWidget {
   final title, widthKasus, widthSembuh, widthDirawat, widthMeninggal;
 
-  const ProvinceTile({Key key, this.title, this.widthKasus, this.widthSembuh, this.widthDirawat, this.widthMeninggal}) : super(key: key);
+  const ProvinceTile({Key? key, this.title, this.widthKasus, this.widthSembuh, this.widthDirawat, this.widthMeninggal}) : super(key: key);
+
 
   @override
   Widget build(context) {
